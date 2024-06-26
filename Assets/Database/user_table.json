@@ -1,0 +1,90 @@
+﻿{
+  "name": "Test user data",
+  "characters": [
+    {
+      "char_uid": "char_338_iris",
+      "level": 0,
+      "exp": 0,
+      "potential": 0
+    },
+    {
+      "char_uid": "char_4027_heyak",
+      "level": 0,
+      "exp": 0,
+      "potential": 0
+    },
+    {
+      "char_uid": "char_350_surtr",
+      "level": 0,
+      "exp": 0,
+      "potential": 0
+    },
+    {
+      "char_uid": "char_4082_qiubai",
+      "level": 0,
+      "exp": 0,
+      "potential": 0
+    },
+    {
+      "char_uid": "char_179_cgbird",
+      "level": 0,
+      "exp": 0,
+      "potential": 0
+    },
+    {
+      "char_uid": "char_449_glider",
+      "level": 0,
+      "exp": 0,
+      "potential": 0
+    },
+    {
+      "char_uid": "char_103_angel",
+      "level": 0,
+      "exp": 0,
+      "potential": 0
+    },
+    {
+      "char_uid": "char_416_zumama",
+      "level": 0,
+      "exp": 0,
+      "potential": 0
+    },
+    {
+      "char_uid": "char_1034_jesca2",
+      "level": 0,
+      "exp": 0,
+      "potential": 0
+    },
+    {
+      "char_uid": "char_4065_judge",
+      "level": 0,
+      "exp": 0,
+      "potential": 0
+    },
+    {
+      "char_uid": "char_222_bpipe",
+      "level": 0,
+      "exp": 0,
+      "potential": 0
+    },
+    {
+      "char_uid": "char_4087_ines",
+      "level": 0,
+      "exp": 0,
+      "potential": 0
+    },
+    {
+      "char_uid": "char_245_cello",
+      "level": 0,
+      "exp": 0,
+      "potential": 0
+    },
+    {
+      "char_uid": "token_10011_beewax_oblisk",
+      "level": 0,
+      "exp": 0,
+      "potential": 0
+    }
+  ],
+  "items": []
+}
