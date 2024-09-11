@@ -160,4 +160,12 @@ public class CharacterTable
 
         return characterTable;
     }
+
+    public static Character GetCharacter(string uid)
+    {
+        if (!DatabaseManager.Instance.characterTable.characters.ContainsKey(uid))
+            return null;
+
+        return DatabaseManager.Instance.characterTable.characters[uid];
+    }
 }

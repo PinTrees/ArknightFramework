@@ -15,6 +15,7 @@ public static class ObjectPoolTags
     // UI
     public const string UI_Cheet_CharacterSearchHeader = "UI_Cheet_CharacterSearchHeader";
     public const string UI_Character_Slot = "UI_Character_Slot";
+    public const string UI_FormCharacterSelect_Slot = "UI_FormCharacterSelect_Slot";
 }
 
 
