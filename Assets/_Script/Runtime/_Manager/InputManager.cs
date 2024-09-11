@@ -6,16 +6,16 @@ public class InputManager : Singleton_Mono<InputManager>
     {
         if (Input.GetKeyDown(KeyCode.C))
         {
-            if (UIManager.Instance.GetView<UI_Cheet_Main>().IsShow())
-                UIManager.Instance.GetView<UI_Cheet_Main>().Close();
-            else UIManager.Instance.GetView<UI_Cheet_Main>().Show();
+            if (UISystemManager.Instance.GetView<UI_Cheet_Main>().IsShow())
+                UISystemManager.Instance.GetView<UI_Cheet_Main>().Close();
+            else UISystemManager.Instance.GetView<UI_Cheet_Main>().Show();
         }
 
         if (Input.GetKeyDown(KeyCode.O))
         {
-            if (UIManager.Instance.GetView<UI_CharacterList_View>().IsShow())
-                UIManager.Instance.GetView<UI_CharacterList_View>().Close();
-            else UIManager.Instance.GetView<UI_CharacterList_View>().Show();
+            if (UISystemManager.Instance.GetView<UI_CharacterList_View>().IsShow())
+                UISystemManager.Instance.GetView<UI_CharacterList_View>().Close();
+            else UISystemManager.Instance.GetView<UI_CharacterList_View>().Show();
         }
     }
 }

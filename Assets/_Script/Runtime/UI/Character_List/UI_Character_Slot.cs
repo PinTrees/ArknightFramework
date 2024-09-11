@@ -21,7 +21,7 @@ public class UI_Character_Slot : UIObjectBase
         characterInfoViewButton.onClick.RemoveAllListeners();
         characterInfoViewButton.onClick.AddListener(() =>
         {
-            var view = UIManager.Instance.GetView<UI_CharacterInfo_View>();
+            var view = UISystemManager.Instance.GetView<UI_CharacterInfo_View>();
             view.character = character;
             view.userCharacterData = userCharacterData;
             view.Show();

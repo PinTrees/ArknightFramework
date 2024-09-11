@@ -22,6 +22,7 @@ public class UI_CharacterInfo_View : UIViewBase
     public override void Show()
     {
         base.Show();
+        base.ShowAnimation();
 
         if (userCharacterData == null)
             return;
@@ -38,14 +39,18 @@ public class UI_CharacterInfo_View : UIViewBase
         characterNameText.text = character.name;
         characterEnNameText.text = character.appellation;
 
-        var hudView = UIManager.Instance.GetView<UI_Hud_View>();
-        hudView.AddBackAction(() => Close());
-        hudView.Show();
+        UISystemManager.Instance.GetView<UI_TopTab>().AddUndo(() =>
+        {
+            Close();
+        }).Show();
     }
 
     public override void Close()
     {
-        base.Close();
-        characterIllustImage.texture = null;
+        base.CloseAnimation(() =>
+        {
+            base.Close();
+            characterIllustImage.texture = null;
+        });
     }
 }

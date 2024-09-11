@@ -4,11 +4,15 @@ using UnityEngine.UI;
 
 public class UI_MainMenu_View : UIViewBase
 {
+    [Header("Menu Button Setting")]
     public Button chatacterListButton;
+    public Button formSettingButton;
+    public Button stageLobbyButton;
 
+    [Space]
     public Text currentDateText;
 
-    [Header("user info component")]
+    [Header("User Info Component Setting")]
     public Text userLevelText;
     public Text userNameText;
     public Text userIdText;
@@ -25,7 +29,19 @@ public class UI_MainMenu_View : UIViewBase
         chatacterListButton.onClick.RemoveAllListeners();
         chatacterListButton.onClick.AddListener(() =>
         {
-            UIManager.Instance.GetView<UI_CharacterList_View>().Show();
+            UISystemManager.Instance.GetView<UI_CharacterList_View>().Show();
+        });
+
+        formSettingButton.onClick.RemoveAllListeners();
+        formSettingButton.onClick.AddListener(() =>
+        {
+            UISystemManager.Instance.GetView<UI_FormSetting_View>().Show();
+        });
+
+        stageLobbyButton.onClick.RemoveAllListeners();
+        stageLobbyButton.onClick.AddListener(() =>
+        {
+            UISystemManager.Instance.GetView<UI_StageLobby_View>().Show();
         });
     }
 

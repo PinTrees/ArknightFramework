@@ -38,6 +38,6 @@ public class UI_Cheet_CharacterSearchHeader : UIObjectBase
 
         character = null;
         characterIconImage.texture = null;
-        ObjectPoolManager.Instance.Relese(ObjectPoolTags.UI_Cheet_CharacterSearchHeader, this.gameObject);
+        ObjectPoolManager.Instance.Release(ObjectPoolTags.UI_Cheet_CharacterSearchHeader, this.gameObject);
     }
 }

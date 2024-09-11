@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography;
 using UnityEngine;
 
 [System.Serializable]
@@ -11,12 +13,21 @@ public class ObjectPool
     public GameObject origin;
     public Queue<GameObject> objects = new();
 
-    public void Create()
+
+    public void Init()
+    {
+        origin.SetActive(false);
+        container = new GameObject(uid).transform;
+    }
+
+    private void CreateObject()
     {
         GameObject spawn = GameObject.Instantiate(origin);
-        spawn.SetActive(false);
+
+        spawn.name = uid;
         spawn.transform.SetParent(container);
-        spawn.transform.SetZeroLocalPositonAndRotation();
+        spawn.transform.localEulerAngles = Vector3.zero;
+        spawn.transform.localPosition = Vector3.zero;
 
         objects.Enqueue(spawn);
     }
@@ -24,9 +35,13 @@ public class ObjectPool
     public GameObject GetObject()
     {
         if (objects.Count <= 0)
-            Create();
+        {
+            CreateObject();
+        }
 
         GameObject target = objects.Dequeue();
+        target.transform.SetParent(null);
+
         if (!target.activeSelf)
             target.SetActive(true);
 
@@ -35,30 +50,34 @@ public class ObjectPool
 
     public void Relese(GameObject target)
     {
-        if (objects.Contains(target))
-            return;
-
-        if (target.activeSelf)
-            target.SetActive(false);
+        target.SetActive(false);
+        target.transform.SetParent(container, true);
 
         objects.Enqueue(target);
     }
 }
 
-public class ObjectPoolManager : Singleton_Mono<ObjectPoolManager>
+[System.Serializable]
+public class ObjectPoolData
 {
-    public List<ObjectPool> initPoolList = new();
+    public GameObject target;
+}
+
+public class ObjectPoolManager : Singleton<ObjectPoolManager>
+{
+    public List<ObjectPoolData> initPools = new();
     public Dictionary<string, ObjectPool> pools = new();
 
 
-    private void Start()
+    public override void Init()
     {
-        initPoolList.ForEach(e =>
-        {
-            CreatePool(e.uid, e.origin);
-        });
+        base.Init();
 
-        initPoolList.Clear();
+        initPools.ForEach(e =>
+        {
+            CreatePool(e.target.name, e.target);
+        });
+        initPools.Clear();
     }
 
     public void CreatePool(string tag, GameObject target)
@@ -70,12 +89,12 @@ public class ObjectPoolManager : Singleton_Mono<ObjectPoolManager>
         {
             uid = tag,
             origin = GameObject.Instantiate(target),
-            container = new GameObject(tag).transform,
         };
 
         pool.origin.SetActive(false);
 
         pools[tag] = pool;
+        pools[tag].Init();
     }
 
 
@@ -92,7 +111,7 @@ public class ObjectPoolManager : Singleton_Mono<ObjectPoolManager>
         return Get(tag).GetComponent<T>();
     }
 
-    public void Relese(string tag, GameObject target)
+    public void Release(string tag, GameObject target)
     {
         if (!pools.ContainsKey(tag))
             return;

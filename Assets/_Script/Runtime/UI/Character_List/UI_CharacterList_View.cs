@@ -10,12 +10,12 @@ public class UI_CharacterList_View : UIViewBase
     protected override void OnInit()
     {
         base.OnInit();
-        Close();
     }
 
     public override void Show()
     {
         base.Show();
+        base.ShowAnimation();
 
         var characters = UserDataManager.Instance.userData.characters;
         foreach (var character in characters)
@@ -27,19 +27,23 @@ public class UI_CharacterList_View : UIViewBase
             slots.Add(slot);
         }
 
-        var hudView = UIManager.Instance.GetView<UI_Hud_View>();
-        hudView.AddBackAction(() => Close());
-        hudView.Show();
+        UISystemManager.Instance.GetView<UI_TopTab>().AddUndo(() =>
+        {
+            Close();
+        }).Show();
     }
 
     public override void Close()
     {
-        base.Close();
-
-        slots.ForEach(slot =>
+        base.CloseAnimation(() =>
         {
-            ObjectPoolManager.Instance.Relese(ObjectPoolTags.UI_Character_Slot, slot.gameObject);
+            base.Close();
+
+            slots.ForEach(slot =>
+            {
+                ObjectPoolManager.Instance.Release(ObjectPoolTags.UI_Character_Slot, slot.gameObject);
+            });
+            slots.Clear();
         });
-        slots.Clear();
     }
 }

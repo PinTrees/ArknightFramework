@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
         DatabaseManager.Instance.Init();
         ResourceManager.Instance.Init();
 
-        UIManager.Instance.GetView<UI_MainMenu_View>().Show();
+        UISystemManager.Instance.GetView<UI_MainMenu_View>().Show();
     }
 
     void Update()
