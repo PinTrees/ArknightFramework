@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using System;
 using Unity.VisualScripting;
@@ -60,6 +61,12 @@ public class UIViewBase : MonoBehaviour
         return baseObject.activeSelf;
     }
 
+    public virtual async UniTask<object> ShowWaitClose()
+    {
+        await UniTask.Yield();
+        return null;
+    }
+
     public virtual void Show()
     {
         Init();
@@ -69,6 +76,11 @@ public class UIViewBase : MonoBehaviour
 
         baseObject.SetActive(true);
     }  
+
+    public virtual void Refresh()
+    {
+
+    }
 
     public void ShowAnimation()
     {

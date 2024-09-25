@@ -40,5 +40,12 @@ public class UserDataManager : Singleton_Mono<UserDataManager>
 
         SaveSystem.SaveJson_AssetPath(userData, USERDATA_SAVE_PATH);
     }
+    [Button("Refresh User Data")]
+    public void _Editor_RefreshUserData()
+    {
+        //userDataJson;
+        UserData userData = UserData.FromJson(userdata_table.text);
+        SaveSystem.SaveJson_AssetPath(userData, USERDATA_SAVE_PATH);
+    }
 #endif
 }

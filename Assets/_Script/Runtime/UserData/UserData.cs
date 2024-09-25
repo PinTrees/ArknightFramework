@@ -15,6 +15,7 @@ public class UserData
     public int redgem;
     public int puregem;
 
+    public List<UserTeamFormationData> teamFormations = new();
     public List<UserCharacterData> characters = new();
     public List<UserItemData> items = new();
 
@@ -25,8 +26,19 @@ public class UserData
         if(userData.main_character_id == null)
             userData.main_character_id = userData.characters.First().char_uid;
 
+        if (userData.teamFormations.Count <= 0)
+        {
+            userData.teamFormations.Add(new());
+        }
         return userData;
     }
+}
+
+[System.Serializable]
+public class UserTeamFormationData
+{
+    public int index;
+    public List<UserCharacterData> characters = new();
 }
 
 [System.Serializable]
