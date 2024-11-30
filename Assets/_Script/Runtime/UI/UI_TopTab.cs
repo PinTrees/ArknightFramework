@@ -44,9 +44,4 @@ public class UI_TopTab : UIViewBase
         backActionStatck.Push(action);
         return this;
     }
-    public UI_TopTab Pop()
-    {
-        backActionStatck.Pop();
-        return this;
-    }
 }

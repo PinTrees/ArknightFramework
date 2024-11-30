@@ -1,54 +1,5 @@
 ﻿{
   "name": "Test user data",
-  "level": 0,
-  "id": 0,
-  "main_character_id": "char_338_iris",
-  "gold": 0,
-  "redgem": 0,
-  "puregem": 0,
-  "teamFormations": [
-    {
-      "index": 0,
-      "characters": [
-        {
-          "char_uid": "char_338_iris",
-          "level": 0,
-          "exp": 0,
-          "potential": 0
-        },
-        {
-          "char_uid": "char_222_bpipe",
-          "level": 0,
-          "exp": 0,
-          "potential": 0
-        },
-        {
-          "char_uid": "char_179_cgbird",
-          "level": 0,
-          "exp": 0,
-          "potential": 0
-        },
-        {
-          "char_uid": "char_416_zumama",
-          "level": 0,
-          "exp": 0,
-          "potential": 0
-        },
-        {
-          "char_uid": "char_350_surtr",
-          "level": 0,
-          "exp": 0,
-          "potential": 0
-        },
-        {
-          "char_uid": "char_103_angel",
-          "level": 0,
-          "exp": 0,
-          "potential": 0
-        }
-      ]
-    }
-  ],
   "characters": [
     {
       "char_uid": "char_338_iris",

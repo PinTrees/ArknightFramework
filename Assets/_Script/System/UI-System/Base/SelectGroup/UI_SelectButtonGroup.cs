@@ -8,7 +8,7 @@ public class UI_SelectButtonGroup : UIObjectBase
 
     [Header("Runtime Value")]
     [SerializeField] private List<UI_SelectButton> selectButtons = new();
-    [SerializeField] public int currentSelectIndex;
+    [SerializeField] private int currentSelectIndex;
 
     protected override void OnInit()
     {

@@ -11,11 +11,6 @@ public class ResourceManager : Singleton_Mono<ResourceManager>
 {
     public static string baseUrl = "https://raw.githubusercontent.com/PinTrees/Arknight-Images/main/";
 
-    [Header("character slot rare aura resource")]
-    public Sprite[] character_rare_aura;
-    public Sprite[] character_rare_background;
-    public Color[] character_rare_aura_color;
-
     [Header("headhunt resource")]
     public Sprite headhuntTitleSprite;
     public Sprite headhuntResum_6rare_Sprite;
@@ -210,41 +205,5 @@ public class ResourceManager : Singleton_Mono<ResourceManager>
             skinData = DatabaseManager.Instance.skinSearchTable.Search_Elite2(char_id);
 
         return $"Assets/Portraits/{skinData.portraitId}.png";
-    }
-
-    public Sprite GetCharacterRareAureSprite(string rare)
-    {
-        if (rare == "TIER_6") return character_rare_aura[5];
-        if (rare == "TIER_5") return character_rare_aura[4];
-        if (rare == "TIER_4") return character_rare_aura[3];
-        if (rare == "TIER_3") return character_rare_aura[2];
-        if (rare == "TIER_2") return character_rare_aura[1];
-        if (rare == "TIER_1") return character_rare_aura[0];
-
-        return null;
-    }
-
-    public Sprite GetCharacterRareBackgroundSprite(string rare)
-    {
-        if (rare == "TIER_6") return character_rare_background[5];
-        if (rare == "TIER_5") return character_rare_background[4];
-        if (rare == "TIER_4") return character_rare_background[3];
-        if (rare == "TIER_3") return character_rare_background[2];
-        if (rare == "TIER_2") return character_rare_background[1];
-        if (rare == "TIER_1") return character_rare_background[0];
-
-        return null;
-    }
-
-    public Color GetCharacterRareAureColor(string rare)
-    {
-        if (rare == "TIER_6") return character_rare_aura_color[5];
-        if (rare == "TIER_5") return character_rare_aura_color[4];
-        if (rare == "TIER_4") return character_rare_aura_color[3];
-        if (rare == "TIER_3") return character_rare_aura_color[2];
-        if (rare == "TIER_2") return character_rare_aura_color[1];
-        if (rare == "TIER_1") return character_rare_aura_color[0];
-
-        return Color.white;
     }
 }

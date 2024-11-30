@@ -5,7 +5,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "83d8a2b424a2ee7137f8671770e9acb2b9d325f0"
+      "hash": "fbe0bf85155f42f8832205f7b3ac3df571ada33e"
     },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
@@ -14,7 +14,7 @@
       "dependencies": {}
     },
     "com.unity.ai.navigation": {
-      "version": "2.0.4",
+      "version": "2.0.3",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -33,7 +33,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.collab-proxy": {
-      "version": "2.5.1",
+      "version": "2.4.4",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
@@ -77,7 +77,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.inputsystem": {
-      "version": "1.11.0",
+      "version": "1.9.0",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -114,7 +114,7 @@
         "com.unity.burst": "1.8.14",
         "com.unity.mathematics": "1.3.2",
         "com.unity.ugui": "2.0.0",
-        "com.unity.collections": "2.4.3",
+        "com.unity.collections": "2.4.1",
         "com.unity.modules.physics": "1.0.0",
         "com.unity.modules.terrain": "1.0.0",
         "com.unity.modules.jsonserialize": "1.0.0",

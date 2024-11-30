@@ -12,7 +12,7 @@ public class UI_FormCharacterSelect_Slot : UIObjectBase
     public GameObject selectOverlayObject;
 
     [Header("Runtime Value")]
-    [SerializeField] public UserCharacterData userCharacterData;
+    [SerializeField] private UserCharacterData userCharacterData;
 
     protected override void OnInit()
     {
